@@ -14,19 +14,6 @@
   <link rel="stylesheet" href="css/style.css">
   <script src="js/jquery-3.3.1.min.js"></script>
   <script>
-    /*
-    function DigaX(){
-      navigator.camera.getPicture(onSuccess, onFail, {
-      quality: 50,
-      destinationType: Camera.DestinationType.DATA_URL});
-      saveToPhotoAlbum: true;
-      
-      function onSuccess(ImageData) {
-          var image = document.getElementById('imagem');
-          image.src = "data:image/jpeg;base64," + ImageData;
-          Escaneia();
-      }
-    }; */
      function Escaneia(){
      cordova.plugins.barcodeScanner.scan(function(resultado){
        if(resultado.text == "280720550")
