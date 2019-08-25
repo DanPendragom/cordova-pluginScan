@@ -1,0 +1,294 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Security-Policy" content="default-src * data: gap: https://ssl.gstatic.com; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+  <script src="components/loader.js"></script>
+  <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+  <link rel="stylesheet" href="components/loader.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+  <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script>
+    /*
+    function DigaX(){
+      navigator.camera.getPicture(onSuccess, onFail, {
+      quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL});
+      saveToPhotoAlbum: true;
+      
+      function onSuccess(ImageData) {
+          var image = document.getElementById('imagem');
+          image.src = "data:image/jpeg;base64," + ImageData;
+          Escaneia();
+      }
+    }; */
+     function Escaneia(){
+     cordova.plugins.barcodeScanner.scan(function(resultado){
+       if(resultado.text == "280720550")
+       {
+         document.getElementById("cell2").style.display="none";
+         document.getElementById("cell3").style.display="none";
+         document.getElementById("cell4").style.display="none";
+
+         document.getElementById("cell1").style.display="block";
+       }
+       else if(resultado.text == "989895555"){
+         document.getElementById("cell1").style.display="none";
+         document.getElementById("cell3").style.display="none";
+         document.getElementById("cell4").style.display="none";
+
+         document.getElementById("cell2").style.display="block";
+       }
+        else if(resultado.text == "85236987"){
+         document.getElementById("cell1").style.display="none";
+         document.getElementById("cell2").style.display="none";
+         document.getElementById("cell4").style.display="none";
+
+         document.getElementById("cell3").style.display="block";
+       }
+        else if(resultado.text == "85369877444"){
+         document.getElementById("cell2").style.display="none";
+         document.getElementById("cell3").style.display="none";
+         document.getElementById("cell1").style.display="none";
+
+         document.getElementById("cell4").style.display="block";
+       }
+       else{
+         document.getElementById("cell2").style.display="none";
+         document.getElementById("cell3").style.display="none";
+         document.getElementById("cell1").style.display="none";
+         document.getElementById("cell4").style.display="none";
+
+          alert("Código de barras não encontrado");
+       }
+          }, function(error){
+                alert("Falha no sistema, me desculpa professor:" + error);
+          }
+        );
+      }
+  </script>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="row">
+      <div class="col-xs-12">
+        <button id="camera" onclick="Escaneia()">SCAN CODE</button>
+      </div>
+    </div>
+  <div class="container">
+    <section class="aparelhos" id="someTudo">
+      <section class="desaparece " id="cell1">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Ipad Mini Wi-fi 64Gb Cinza-Espacial</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+          <img src="img/cell1.png" alt=""> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 class="ficha"> Ficha Técnica </h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Definições</th>
+                  <th scope="col">Detalhes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Valor</th>
+                  <td>R$ 3.499,00</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sistema </th>
+                  <td>Android</td>
+                </tr>
+                <tr>
+                  <th scope="row"> Processador</th>
+                  <td>A12 Bionic</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tela</th>
+                  <td>7.9p</td>
+                </tr>
+                <tr>
+                  <th scope="row">Câmera</th>
+                  <td>Câmera traseira: 8MP; - Câmera frontal: 7MP</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mémoria</th>
+                  <td>64GB ROM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="desaparece" id="cell2">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Samsung Galaxy J8 Dual Chip 64Gb </h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+          <img src="img/cell2.jpg" alt=""> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 class="ficha"> Ficha Técnica </h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Definições</th>
+                  <th scope="col">Detalhes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Valor</th>
+                  <td>R$ 1.888,00</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sistema </th>
+                  <td>Android</td>
+                </tr>
+                <tr>
+                  <th scope="row"> Processador</th>
+                  <td>1.8GHz Octa Core</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tela</th>
+                  <td>1480x720(HD+) 153.6mm(6.0")</td>
+                </tr>
+                <tr>
+                  <th scope="row">Câmera</th>
+                  <td>Câmera Traseira: 16.0 MP + 5.0 MP</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mémoria</th>
+                  <td>64Gb ROM - 4GB RAM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="desaparece" id="cell3">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Motorola One XT1941 Branco 64GB</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+          <img src="img/cell3.jpg" alt=""> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 class="ficha"> Ficha Técnica </h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Definições</th>
+                  <th scope="col">Detalhes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Valor</th>
+                  <td>R$ 1.234,00</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sistema </th>
+                  <td>Android</td>
+                </tr>
+                <tr>
+                  <th scope="row"> Processador</th>
+                  <td>Qualcomm Snapdragon 625 (MSM8953) Octa-Core de 2.0 GHz</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tela</th>
+                  <td>Amoled - 1520x720 </td>
+                </tr>
+                <tr>
+                  <th scope="row">Câmera</th>
+                  <td>13 MP</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mémoria</th>
+                  <td>64GB ROM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="desaparece" id="cell4">
+        <div class="row">
+          <div class="col-xs-12">
+            <h4>Asus Zenfone Max Pro M1</h4>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+          <img src="img/cell4.jpg" alt=""> 
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <h4 class="ficha"> Ficha Técnica </h4>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Definições</th>
+                  <th scope="col">Detalhes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Valor</th>
+                  <td>R$ 1.199,00</td>
+                </tr>
+                <tr>
+                  <th scope="row">Sistema </th>
+                  <td>Android</td>
+                </tr>
+                <tr>
+                  <th scope="row"> Processador</th>
+                  <td>Qualcomm Snapdragon SDM636 1,8 GHz, 2 Mb Cache</td>
+                </tr>
+                <tr>
+                  <th scope="row">Tela</th>
+                  <td>6,0" Led Backlight Ips panel (1080x2160)</td>
+                </tr>
+                <tr>
+                  <th scope="row">Câmera</th>
+                  <td>8MP - 16+5MP</td>
+                </tr>
+                <tr>
+                  <th scope="row">Mémoria</th>
+                  <td>64GB ROM - 4GB RAM</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </section>
+  </div>
+</body>
+</html>
